@@ -28,7 +28,7 @@ SNAME="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 
 # check for directory architecture
 YOCTODIR="${SDIR}"
-IMAGE="coldnew/yocto-build"
+IMAGE="agingchan/yocto-build"
 CONTAINER="yocto-build"
 
 ############################################################
@@ -179,12 +179,10 @@ do
             docker start -i ${CONTAINER}
         else
             INFO "Creating container $CONTAINER"
-            USER=$(whoami)
+            INFO "Home ${HOME}"
+            USER=yocto
             docker run -it \
                    --volume="$YOCTODIR:/yocto" \
-                   --volume="${HOME}/.ssh:/home/${USER}/.ssh" \
-                   --volume="${HOME}/.gitconfig:/home/${USER}/.gitconfig" \
-                   --volume="/etc/localtime:/etc/localtime:ro" \
                    --env="DISPLAY" \
                    --env="QT_X11_NO_MITSHM=1" \
                    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
