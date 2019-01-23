@@ -180,7 +180,7 @@ do
         else
             INFO "Creating container $CONTAINER"
             INFO "Home ${HOME}"
-            USER=yocto
+            USER="${whoami}"
             docker run -it \
                    --volume="$YOCTODIR:/yocto" \
                    --env="DISPLAY" \
