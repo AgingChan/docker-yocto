@@ -19,7 +19,7 @@ USER_UID=${HOST_UID:=$UID}
 USER_GID=${HOST_GID:=$GID}
 
 # Create user
-useradd ${USER} --shell /bin/bash --create-home \
+useradd -m ${USER} -s /bin/bash --create-home -d /home/${USER}\
 	--uid ${USER_UID} --gid ${USER_GID} > /dev/null 2>&1
 
 echo 'ALL ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers
