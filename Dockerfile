@@ -30,7 +30,7 @@ RUN apt-get install -y python-git
 RUN apt-get install -y libsdl1.2-dev xterm sed cvs subversion coreutils \
       texi2html docbook-utils python-pysqlite2 help2man make gcc g++ \
       desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev mercurial \
-      autoconf automake groff curl lzop asciidoc libssl-dev u-boot-tools
+      autoconf automake groff curl lzop asciidoc libssl-dev u-boot-tools screen
 
 # Extra package for Xilinx PetaLinux
 RUN apt-get install -y xvfb libtool libncurses5-dev libssl-dev zlib1g-dev:i386 tftpd
